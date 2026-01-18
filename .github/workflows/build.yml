@@ -1,4 +1,7 @@
 name: Build Web
+uses: actions/setup-node@v4
+with:
+    node-version: 20
 
 on:
   push:
@@ -16,7 +19,7 @@ jobs:
       - name: ติดตั้ง Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
 
       - name: ติดตั้ง dependency
         run: npm install
