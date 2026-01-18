@@ -1,0 +1,25 @@
+name: Build Web
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: โหลดโค้ดจาก repo
+        uses: actions/checkout@v4
+
+      - name: ติดตั้ง Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: ติดตั้ง dependency
+        run: npm install
+
+      - name: build เว็บ
+        run: npm run build
